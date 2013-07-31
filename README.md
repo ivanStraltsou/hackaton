@@ -3,8 +3,8 @@ hackaton
 
 This story is about http://img0.liveinternet.ru/images/attach/c/5//3970/3970473_sprite198.swf
 
-*Installation
-  *required:
+*Installation*
+required:
   1. node v0.10.0+
   2. npm
   3. Google Chrome(stable in > v28)
