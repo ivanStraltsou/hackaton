@@ -1,0 +1,185 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+
+@mixin default-size {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.navbar-brand {
+  max-width: none;
+}
+
+circle {
+  -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.preview {
+  position: relative;
+  z-index: 0;
+  width: 900px;
+  height: 600px;
+  overflow: hidden;
+  margin: 50px auto 0;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  
+  .part {
+    position: absolute;
+    @include default-size;
+    border: 1px solid #369;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    @include background-image(radial-gradient(45px 45px, aqua 10px, #1e90ff 30px));
+    @for $i from 1 through 10 {
+      &.d-#{$i} {
+        width: 60px + $i * 20;
+        height: 60px + $i * 20;
+        border-radius: 30px + $i * 10
+      }
+    }
+  
+    @for $i from 11 through 20 {
+      &.d-#{$i} {
+        width: 240px - $i % 10 * 20;
+        height: 240px - $i % 10 * 20;
+        border-radius: 120px - $i % 10 * 10
+      }
+    }
+  }
+}
+
+@mixin eye {
+  content: '•';
+  position: absolute;
+  z-index: 0;
+  top: 90px;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  font-size: 28px;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.shark .part {
+  background: #fff;
+  border: none;
+  box-shadow: inset 0 100px 0 -60px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  
+  &.d-1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    box-shadow: inset 0 100px 0 -60px #030303, inset 0 148px 0 -90px #fff, inset 0 150px 0 -90px #999, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-2 {
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
+    box-shadow: inset 0 172px 0 -85px #030303, inset 0 148px 0 -46px #fff, inset 0 150px 0 -46px #999, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-3 {
+    width: 220px;
+    height: 220px;
+    border-radius: 110px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 197px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-4 {
+    width: 256px;
+    height: 256px;
+    border-radius: 128px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 224px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+    &:before {
+      @include eye;
+      left: 0;
+      -webkit-transform: rotateX(20deg) rotateY(30deg);
+      transform: rotateX(20deg) rotateY(30deg);
+    }
+    &:after {
+      @include eye;
+      right: 0;
+      -webkit-transform: rotateX(20deg) rotateY(-30deg);
+      transform: rotateX(20deg) rotateY(-30deg);
+    }
+  }
+  &.d-5 {
+    width: 262px;
+    height: 262px;
+    border-radius: 131px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 238px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-6 {
+    width: 272px;
+    height: 272px;
+    border-radius: 136px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 253px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-7 {
+    width: 280px;
+    height: 280px;
+    border-radius: 140px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 268px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-8 {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 268px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-9 {
+    width: 420px;
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: none;
+    background: #333;
+  }
+  &.d-10 {
+    width: 340px;
+    height: 340px;
+    border-radius: 170px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-11 {
+    margin-top: 50px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-12 {
+    margin-top: 70px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-13 {
+    margin-top: 85px;
+    box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0,0,0,0.1);
+  }
+  &.d-14 {
+    width: 50px;
+    height: 500px;
+    border-radius: 25px;
+    box-shadow: none;
+    background-color: #333;
+  }
+}
+
+.cursor {
+  position: absolute;
+  z-index: 0;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  background-color: #369;
+}

@@ -1,0 +1,20 @@
+###
+#eclipse files
+###
+.project
+
+####
+#node dependencies
+###
+./node_modules
+
+###
+#bower components
+#you can install components locally from tvebase theme root while running "bower install"
+###
+#themes/*/bower_components/*
+
+###
+# Sass
+###
+./public/.sass-cache

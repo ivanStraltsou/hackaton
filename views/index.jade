@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	.navbar
+		a.navbar-brand(href='/') 
+			| UI hackaton / 
+			b {{globalModel.path}}
+	.container
+		a.btn.btn-primary.btn-block(href="/", ng-show="isPreview") Edit
+		.row(ng-view)

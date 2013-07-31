@@ -1,0 +1,15 @@
+doctype 5
+html(ng-app='hc', ng-controller="MainCtrl")
+	head
+		title(ng-bind='pageTitle')
+		link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='stylesheets/screen.css')
+	body
+		block content
+		script(src='bower_components/raphael/raphael.js')
+		script(src='bower_components/angular/angular.js')
+		script(src='javascripts/app.js')
+		script(src='javascripts/animation-provider.js')
+		script(src='javascripts/controllers/preview-controller.js')
+		script(src='javascripts/controllers/edit-controller.js')
+		script(src='javascripts/animation.js')

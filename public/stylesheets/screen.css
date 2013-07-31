@@ -1,0 +1,315 @@
+@charset "IBM866";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 14, ../sass/screen.scss */
+.navbar-brand {
+  max-width: none;
+}
+
+/* line 18, ../sass/screen.scss */
+circle {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 24, ../sass/screen.scss */
+.preview {
+  position: relative;
+  z-index: 0;
+  width: 900px;
+  height: 600px;
+  overflow: hidden;
+  margin: 50px auto 0;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+/* line 34, ../sass/screen.scss */
+.preview .part {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #369;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-image: -webkit-gradient(radial, 45px 45px, 0, 45px 45px, 30, color-stop(33.33333%, #00ffff), color-stop(100%, #1e90ff));
+  background-image: -webkit-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: -moz-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: -o-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-1 {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-3 {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-4 {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-5 {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-6 {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-7 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-8 {
+  width: 220px;
+  height: 220px;
+  border-radius: 110px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-9 {
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
+}
+/* line 45, ../sass/screen.scss */
+.preview .part.d-10 {
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-11 {
+  width: 220px;
+  height: 220px;
+  border-radius: 110px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-12 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-13 {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-14 {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-15 {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-16 {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-17 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-18 {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-19 {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+/* line 53, ../sass/screen.scss */
+.preview .part.d-20 {
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
+}
+
+/* line 77, ../sass/screen.scss */
+.shark .part {
+  background: #fff;
+  border: none;
+  box-shadow: inset 0 100px 0 -60px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 82, ../sass/screen.scss */
+.shark .part.d-1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  box-shadow: inset 0 100px 0 -60px #030303, inset 0 148px 0 -90px white, inset 0 150px 0 -90px #999999, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 88, ../sass/screen.scss */
+.shark .part.d-2 {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  box-shadow: inset 0 172px 0 -85px #030303, inset 0 148px 0 -46px white, inset 0 150px 0 -46px #999999, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 94, ../sass/screen.scss */
+.shark .part.d-3 {
+  width: 220px;
+  height: 220px;
+  border-radius: 110px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 197px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 100, ../sass/screen.scss */
+.shark .part.d-4 {
+  width: 256px;
+  height: 256px;
+  border-radius: 128px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 224px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 105, ../sass/screen.scss */
+.shark .part.d-4:before {
+  content: '•';
+  position: absolute;
+  z-index: 0;
+  top: 90px;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  font-size: 28px;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  background: #fff;
+  left: 0;
+  -webkit-transform: rotateX(20deg) rotateY(30deg);
+  transform: rotateX(20deg) rotateY(30deg);
+}
+/* line 111, ../sass/screen.scss */
+.shark .part.d-4:after {
+  content: '•';
+  position: absolute;
+  z-index: 0;
+  top: 90px;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  font-size: 28px;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  background: #fff;
+  right: 0;
+  -webkit-transform: rotateX(20deg) rotateY(-30deg);
+  transform: rotateX(20deg) rotateY(-30deg);
+}
+/* line 118, ../sass/screen.scss */
+.shark .part.d-5 {
+  width: 262px;
+  height: 262px;
+  border-radius: 131px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 238px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 124, ../sass/screen.scss */
+.shark .part.d-6 {
+  width: 272px;
+  height: 272px;
+  border-radius: 136px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 253px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 130, ../sass/screen.scss */
+.shark .part.d-7 {
+  width: 280px;
+  height: 280px;
+  border-radius: 140px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 268px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 136, ../sass/screen.scss */
+.shark .part.d-8 {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 268px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 142, ../sass/screen.scss */
+.shark .part.d-9 {
+  width: 420px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: none;
+  background: #333;
+}
+/* line 149, ../sass/screen.scss */
+.shark .part.d-10 {
+  width: 340px;
+  height: 340px;
+  border-radius: 170px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 155, ../sass/screen.scss */
+.shark .part.d-11 {
+  margin-top: 50px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 159, ../sass/screen.scss */
+.shark .part.d-12 {
+  margin-top: 70px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 163, ../sass/screen.scss */
+.shark .part.d-13 {
+  margin-top: 85px;
+  box-shadow: inset 0 116px 20px -100px rgba(255, 255, 255, 0.3), inset 0 228px 0 -85px #030303, inset 0 -14px 72px rgba(0, 0, 0, 0.1);
+}
+/* line 167, ../sass/screen.scss */
+.shark .part.d-14 {
+  width: 50px;
+  height: 500px;
+  border-radius: 25px;
+  box-shadow: none;
+  background-color: #333;
+}
+
+/* line 176, ../sass/screen.scss */
+.cursor {
+  position: absolute;
+  z-index: 0;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #369;
+}
