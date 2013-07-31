@@ -6,15 +6,17 @@ form.form-horizontal(ng-submit='runDemo()', name='animationPropertiesForm')
 	.form-group
 		label.col-lg-2.control-label(for='width') Canvas params
 		.col-lg-2
+			| width:
 			input#width.form-control(type='number', min='0', placeholder='width(px)', ng-model='options.canvas.width')
 		.col-lg-2
+			| height:
 			input#height.form-control(type='number', min='0', placeholder='height(px)', ng-model='options.canvas.height')
 	.form-group
-		label.col-lg-2.control-label(for='width') Speed
+		label.col-lg-2.control-label(for='width') Speed (px/ms)
 		.col-lg-2
 			input#speed.form-control(type='number', min='0', step='0.05', placeholder='px/ms', ng-model='options.speed')
 	.form-group
-		label.col-lg-2.control-label(for='width') Parts delay
+		label.col-lg-2.control-label(for='width') Parts delay (ms)
 		.col-lg-2
 			input#delay.form-control(type='number', placeholder='ms', ng-model='options.delay')
 	hr
