@@ -1,91 +1,9 @@
 (function(ng, window, document) {
 	'use strict';
+	
 	ng.module('hc').factory('animationProvider', function() {
-		/*var testData = {
-			basic: [
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 50,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 80,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 90,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 100,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 110,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 120,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 110,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 100,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 90,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 80,
-        fill: 'r(0.5, 1)#fff-#000'
-      },
-      {
-        type: 'circle',
-        cx: center.x,
-        cy: center.y,
-        r: 70,
-        fill: 'r(0.5, 1)#fff-#000'
-      }
-    ]
-		}
-		*/
-		
 		/**
-		 * Simple function throttle implementations to improve animation on mousemove
+		 * Simple throttle implementations to improve animations perfomance on mousemove
 		 * @param {Number} delay - number of miliseconds to throttle on
 		 * @param {Function} callback - throttled function
 		 */
@@ -114,6 +32,9 @@
 			}
 		}
 		
+		
+		//____helpers
+		
 		/**
 		 * Returns offset object for provided HTMLElement
 		 * @param {HTMLElement} elem 
@@ -121,10 +42,10 @@
 		function getOffset(elem) {
 			var obj = elem.getBoundingClientRect();
 			return {
-				left : obj.left + document.body.scrollLeft,
-				top : obj.top + document.body.scrollTop,
-				width : obj.width,
-				height : obj.height
+				left 	: obj.left + document.body.scrollLeft,
+				top	 	: obj.top + document.body.scrollTop,
+				width 	: obj.width,
+				height 	: obj.height
 			};
 		}
 		
@@ -132,6 +53,10 @@
 			return parseInt(window.getComputedStyle(elem).getPropertyValue('margin-top'), 10);
 		}
 		
+		//____________
+		
+		
+		//
 		var AnimationFactory = function(options) {
 			//configure factory
 			this._uid = 0;
@@ -157,11 +82,11 @@
 		/**
 		 * CSS 
 		 */
-		function CssAnimation(uid, options, container)	 {
-			this._uid = uid;
-			this.options = options;
-			this.container = container;
-			this.objectParts = [];
+		function CssAnimation(uid, options, container) {
+			this._uid 			= uid;
+			this.options 		= options;
+			this.container 		= container;
+			this.objectParts 	= [];
 		}
 		
 		ng.extend(CssAnimation.prototype, {
@@ -170,19 +95,24 @@
 					that = this,
 					cursor;
 				
-				this.container.innerHTML = '';
-				this.container.style.width = this.options.canvas.width + 'px';
+				//"canvas" for animation
+				//straightforward cleanup			
+				this.container.innerHTML 	= '';
+				this.container.style.width 	= this.options.canvas.width + 'px';
 				this.container.style.height = this.options.canvas.height + 'px';
-				this.containerOffset = getOffset(this.container);
+				this.containerOffset 		= getOffset(this.container);
+				
+				//cursor which duplicates mouse position
+				cursor 				= document.createElement('div');
+				cursor.className 	= 'cursor';
+				cursor.id 			= 'cursor' + this._uid;
+				this.cursor 		= new CentricObject(cursor);
 
-				cursor = document.createElement('div');
-				cursor.className = 'cursor';
-				cursor.id = 'cursor' + this._uid;
-				this.cursor = new CentricObject(cursor);
-
+				//container for object parts
 				this.obj = document.createElement('div');
 				this.obj.id = 'obj' + this._uid;
 					
+				//generating parts
 				while(number -= 1) {
 					var part = document.createElement('div');
 					part.className = 'part d-' + (number);
@@ -193,14 +123,16 @@
 				this.container.appendChild(cursor);
 				this.container.appendChild(this.obj);
 				
+				//fixing z-index issue, reordering generated parts
 				this.objectParts.reverse();
+				//creating centric objects for each part
 				this.objectParts.forEach(function(p, i) {
 					that.objectParts[i] = (new CentricObject(p, {
 						container: that.container,
 						speed: that.options.speed
 					})).setPosition(that.options.canvas.width * 0.5, that.options.canvas.height * 0.5);
 				});
-				
+				//chain it
 				return this;
 			},
 			_addListeners: function() {
@@ -223,20 +155,10 @@
 				
 				container.removeEventListener('mousemove', mousemoveHandler);
 				container.addEventListener('mousemove', mousemoveHandler);
-				
+				//chain it
 				return this;
 			},
-			/*getRotateCssString: function(coordinates) {
-				var resultCss = '';
-				for (var i in coordinates) {
-					if (coordinates.hasOwnProperty(i)) {
-						resultCss += [resultCss.length ? ' ' : '',
-										'rotate', i.toUpperCase(),
-										'(', coordinates[i], 'deg)'].join('');
-					}
-				} 
-				return resultCss;
-			},*/
+			//public shorthand
 			init: function() {
 				return this._prepareCanvas()._addListeners();
 			}
@@ -302,15 +224,15 @@
 		 */
 		function SvgAnimation(uid, options, container) {
 			console.log(uid)
-			this.uid = uid;
-			this.options = options;
-			this.container = container;
+			this.uid		= uid;
+			this.options 	= options;
+			this.container 	= container;
+			this.paper 		= new Raphael(container, container.offsetWidth, container.offsetHeight);
+			this.center 	= {
+					x: this.options.canvas.width * 0.5,
+					y: this.options.canvas.height * 0.5
+				};
 			this.containerOffset = getOffset(container);
-			this.paper = new Raphael(container, container.offsetWidth, container.offsetHeight);
-			this.center = {
-				x: this.options.canvas.width * 0.5,
-				y: this.options.canvas.height * 0.5
-			};
 			this.objectParts = [];
 		}
 		ng.extend(SvgAnimation.prototype, {

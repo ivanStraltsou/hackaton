@@ -40,14 +40,15 @@
 				SHARK: 'shark'
 			};
 		
+		//DEFAULT config is here
 		var options = {
 			partsNumber: 15,
 			canvas: {
 				width: 900,
 				height: 600
 			},
-			speed: 0.5,
-			delay: 40,
+			speed: 0.5, //[px/ms]
+			delay: 40, //[ms]
 			styleType: styleTypes.SHARK,
 			animationType: animationTypes.CSS
 		};
