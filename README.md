@@ -11,12 +11,14 @@ Installation
   3. Google Chrome(stable in > v28)
 
 run following commands in your command prompt or terminal:
-  > npm install
-  > node app
-
+```terminal
+> npm install
+> node app
+```
 Application will be started on port 3001, you should see the following message in your terminal:\n
-  > Express server listening on port 3001
-
+```terminal
+> Express server listening on port 3001
+```
 After that test application will be available on http://localhost:3001
 
 You are done.
